@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PGA Hybrid Rating System — Jason Y. Cho</title>
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="../../index.html">Jason Y. Cho</a>
+    <span class="spacer"></span>
+    <a class="link" href="../../index.html#projects">Projects</a>
+    <a class="link" href="../../writing.html">Writing</a>
+    <a class="link" href="../../index.html#about">About</a>
+  </div>
+</nav>
+
+<header class="proj-head">
+  <div class="wrap">
+    <h1>PGA Hybrid Rating System</h1>
+    <p>Every player on two axes — what the shots say vs what the record says. The gap between them predicts who rebounds and who fades. Explore it below.</p>
+    <div class="tags">
+      <span class="tag">10 seasons · 441 players</span>
+      <span class="tag">walk-forward backtest</span>
+      <span class="tag">75% watchlist hit rate</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="dash-frame">
+    <iframe src="dashboard.html#embed" title="PGA Hybrid Rating dashboard" loading="lazy"></iframe>
+  </div>
+  <div class="dash-note">
+    <span>Pick a season, click any dot, switch group lenses — past seasons show predictions graded against what actually happened.</span>
+    <a href="dashboard.html" target="_blank" rel="noopener">Full screen ↗</a>
+  </div>
+
+  <details class="more">
+    <summary>How it works</summary>
+    <div class="inner">
+      <strong>Skill Rating</strong> weighs Strokes Gained components by their regression impact on four result targets (SG Total, top-10s, money, FedExCup rank). <strong>Outcome Elo</strong> converts each season's results into a multi-player Elo update against the field. Skill looks forward; Elo looks back. All metrics are standardized within season, so 2016 and 2025 are directly comparable.
+    </div>
+  </details>
+
+  <details class="more">
+    <summary>What the backtest found</summary>
+    <div class="inner">
+      <table>
+        <tr><th>Signal</th><th>Predicts</th><th>Evidence (2017–2024)</th></tr>
+        <tr><td>Gems — skill ≥ +0.5σ, results lagging</td><td>Improvement</td><td>64% improve vs 33% matched controls (p=0.003)</td></tr>
+        <tr><td>Elite skill — ≥ +1σ</td><td>Contending</td><td>66% post ≥4 top-10s next season (2× base)</td></tr>
+        <tr><td>Young high-skill — ≤27</td><td>Growth</td><td>largest effect size (rank-biserial 0.35)</td></tr>
+        <tr><td>Fade risk — results ahead of skill</td><td>Decline</td><td>−10pp vs same-results peers (p&lt;0.0001)</td></tr>
+      </table>
+      Momentum — a rising trend by itself — was tested and predicts nothing. A walk-forward model projecting next-season top-10 counts validates at rank ρ = 0.54; 75% of its top-15 picks hit ≥4 top-10s (field base 34%). Limitation: season-aggregate data, so within-season form is invisible.
+    </div>
+  </details>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span class="sig">Jason Y. Cho</span>
+    <div class="links">
+      <a href="mailto:jywcho8@gmail.com">jywcho8@gmail.com</a>
+      <a href="https://www.linkedin.com/in/jason-y-cho-">LinkedIn</a>
+    </div>
+    <div class="fine">© 2026 Jason Y. Cho · PGA Tour data 2016–2025 · statistical reference, not betting advice</div>
+  </div>
+</footer>
+
+</body>
+</html>

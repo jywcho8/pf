@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writing — Jason Y. Cho</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">Jason Y. Cho</a>
+    <span class="spacer"></span>
+    <a class="link" href="index.html#projects">Projects</a>
+    <a class="link" href="writing.html">Writing</a>
+    <a class="link" href="index.html#about">About</a>
+  </div>
+</nav>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><h2>Writing</h2><span class="sub">essays &amp; analysis — click through to read</span></div>
+    <div class="postlist" id="allPosts"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="sig">Jason Y. Cho</span>
+    <div class="links">
+      <a href="mailto:jywcho8@gmail.com">jywcho8@gmail.com</a>
+      <a href="https://www.linkedin.com/in/jason-y-cho-">LinkedIn</a>
+    </div>
+    <div class="fine">© 2026 Jason Y. Cho</div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>renderPosts('allPosts', 'assets/writing.json');</script>
+</body>
+</html>

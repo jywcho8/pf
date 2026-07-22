@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jason Y. Cho — Sports Analytics</title>
+<meta name="description" content="Sports analytics portfolio — rating systems, forecasting models, interactive dashboards.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">Jason Y. Cho</a>
+    <span class="spacer"></span>
+    <a class="link" href="index.html#projects">Projects</a>
+    <a class="link" href="writing.html">Writing</a>
+    <a class="link" href="index.html#about">About</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Data Scientist · Chicago</div>
+    <h1>I test ideas<br>against data.</h1>
+    <p>Data scientist based in Chicago. I build models that hold up out of sample — and write about what they actually say.</p>
+    <div class="skilltags">
+      <span class="tag">Sports Analytics</span>
+      <span class="tag">Forecasting &amp; Backtesting</span>
+      <span class="tag">Data Visualization</span>
+      <span class="tag">Python · R · SQL</span>
+    </div>
+  </div>
+</header>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head"><h2>Projects</h2><span class="sub">interactive — every dashboard runs live in the page</span></div>
+    <div class="cards" id="projectCards"></div>
+  </div>
+</section>
+
+<section id="writing-preview">
+  <div class="wrap">
+    <div class="sec-head"><h2>Latest writing</h2><span class="sub">from my blog</span></div>
+    <div class="postlist" id="latestPosts"></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head"><h2>About</h2></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm Jason, a data scientist based in Chicago. I like questions that can be settled with data — and I hold my own work to that standard: every model I publish is tested against data it has never seen.</p>
+        <p>Currently completing an M.S. in Data Science at Northwestern University. My recent work spans sports analytics, forecasting, and interactive data visualization. Off the clock: golf, and writing about what the numbers actually mean.</p>
+      </div>
+      <div class="contact-card">
+        <div class="cc-label">Get in touch</div>
+        <a class="btn" href="mailto:jywcho8@gmail.com">Email me</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/jason-y-cho-">LinkedIn</a>
+        <a class="btn ghost" href="https://medium.com/@jywcho8">Medium</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <span class="sig">Jason Y. Cho</span>
+    <div class="links">
+      <a href="mailto:jywcho8@gmail.com">jywcho8@gmail.com</a>
+      <a href="https://www.linkedin.com/in/jason-y-cho-">LinkedIn</a>
+    </div>
+    <div class="fine">© 2026 Jason Y. Cho</div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>
+  renderProjects('projectCards', '');
+  renderPosts('latestPosts', 'assets/writing.json', 3);
+</script>
+</body>
+</html>

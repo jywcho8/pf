@@ -1,0 +1,6 @@
+{
+  "feeds": [
+    { "name": "My blog", "url": "REPLACE-WITH-YOUR-BLOG-RSS-URL" }
+  ],
+  "max_posts": 100
+}

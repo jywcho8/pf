@@ -1,0 +1,9 @@
+[
+  {
+    "title": "PGA Hybrid Rating System",
+    "description": "Skill vs results on two axes, backtested over 10 seasons — who rebounds, who fades, and who contends next year.",
+    "url": "projects/pga-elo-rating/",
+    "thumbnail": "assets/pga-thumb.png",
+    "tags": ["golf", "rating systems", "backtesting"]
+  }
+]
