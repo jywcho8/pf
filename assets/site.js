@@ -37,13 +37,23 @@ async function renderPosts(elId, jsonPath, limit) {
     el.appendChild(d); return;
   }
   posts.forEach(p => {
-    const a = document.createElement('a'); a.className = 'post'; a.href = p.link;
-    a.target = '_blank'; a.rel = 'noopener';
+    const a = document.createElement('a'); a.className = 'post' + (p.image ? ' has-thumb' : '');
+    const prefix = jsonPath.startsWith('assets/') ? '' : '../';
+    if (p.page) { a.href = prefix + p.page; }
+    else { a.href = p.link; a.target = '_blank'; a.rel = 'noopener'; }
+    if (p.image) {
+      const img = document.createElement('img'); img.className = 'thumb';
+      img.src = p.image; img.alt = ''; img.loading = 'lazy';
+      a.appendChild(img);
+    }
+    const body = document.createElement('div'); body.className = 'pbody';
+    const row = document.createElement('div'); row.className = 'prow';
     const h = document.createElement('h3'); h.textContent = p.title;
     const dt = document.createElement('span'); dt.className = 'date'; dt.textContent = p.date || '';
-    a.append(h, dt);
-    if (p.excerpt) { const e = document.createElement('div'); e.className = 'excerpt'; e.textContent = p.excerpt; a.appendChild(e); }
-    if (p.source) { const s = document.createElement('div'); s.className = 'src'; s.textContent = p.source + ' ↗'; a.appendChild(s); }
+    row.append(h, dt); body.appendChild(row);
+    if (p.excerpt) { const e = document.createElement('div'); e.className = 'excerpt'; e.textContent = p.excerpt; body.appendChild(e); }
+    if (p.source) { const s = document.createElement('div'); s.className = 'src'; s.textContent = p.page ? p.source : p.source + ' ↗'; body.appendChild(s); }
+    a.appendChild(body);
     el.appendChild(a);
   });
 }
