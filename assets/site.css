@@ -146,3 +146,36 @@ footer .fine { font-size: 12.5px; color: var(--muted); width: 100%; margin-top: 
 /* ---------- hero skill tags ---------- */
 .skilltags { display: flex; gap: 8px; margin-top: 30px; flex-wrap: wrap; }
 .skilltags .tag { font-size: 13px; padding: 6px 14px; }
+
+
+
+/* ---------- writing cards with thumbnails ---------- */
+.post { grid-template-columns: 1fr; }
+.post.has-thumb { display: grid; grid-template-columns: 168px 1fr; gap: 0 20px; align-items: center; padding: 14px 22px 14px 14px; }
+.post .thumb { width: 168px; aspect-ratio: 16/10; object-fit: cover; border-radius: 10px; border: 1px solid var(--border); }
+.post .pbody { min-width: 0; }
+.post .prow { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
+.post .excerpt, .post .src { grid-column: auto; }
+.post .excerpt { margin-top: 2px; }
+.post .src { margin-top: 4px; }
+@media (max-width: 560px) {
+  .post.has-thumb { grid-template-columns: 1fr; }
+  .post .thumb { width: 100%; }
+}
+
+/* ---------- article (mirrored posts) ---------- */
+.article { padding: 48px 0 24px; }
+.article .wrap { max-width: 760px; }
+.article h1 { font-size: clamp(28px, 4.5vw, 38px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
+.art-meta { margin: 12px 0 30px; font-size: 14px; color: var(--muted); }
+.art-body { font-size: 17px; line-height: 1.75; color: var(--ink); }
+.art-body p { margin: 0 0 18px; }
+.art-body h3, .art-body h4 { margin: 30px 0 10px; letter-spacing: -0.01em; }
+.art-body img { border-radius: 12px; border: 1px solid var(--border); margin: 8px auto; }
+.art-body figure { margin: 22px 0; }
+.art-body figcaption { font-size: 13px; color: var(--muted); text-align: center; margin-top: 8px; }
+.art-body blockquote { border-left: 3px solid var(--accent); margin: 20px 0; padding: 4px 18px; color: var(--ink-2); }
+.art-body pre { background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+                padding: 14px 16px; overflow-x: auto; font-size: 13.5px; line-height: 1.55; }
+.art-body code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.92em; }
+.art-body a { text-decoration: underline; }
