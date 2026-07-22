@@ -1,6 +1,6 @@
 {
   "feeds": [
-    { "name": "My blog", "url": "REPLACE-WITH-YOUR-BLOG-RSS-URL" }
+    { "name": "My blog", "url": "https://medium.com/feed/@jywcho8" }
   ],
   "max_posts": 100
 }
