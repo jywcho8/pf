@@ -7,6 +7,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   sync:
@@ -21,3 +23,15 @@ jobs:
           git config user.email "actions@github.com"
           git add assets/writing.json posts/
           git diff --cached --quiet || (git commit -m "Sync writing from blog" && git push)
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+  deploy:
+    needs: sync
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
