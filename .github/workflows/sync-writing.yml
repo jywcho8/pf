@@ -19,5 +19,5 @@ jobs:
         run: |
           git config user.name "writing-sync-bot"
           git config user.email "actions@github.com"
-          git add assets/writing.json
+          git add assets/writing.json posts/
           git diff --cached --quiet || (git commit -m "Sync writing from blog" && git push)
